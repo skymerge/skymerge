@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>スカイマージ | DX支援サービス</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', 'Meiryo', sans-serif;
+            line-height: 2;
+            color: #333;
+            background-color: #fff;
+            font-size: 16px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+        
+        /* ヘッダー */
+        header {
+            padding: 80px 0 60px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .logo {
+            width: 120px;
+            height: auto;
+            margin-bottom: 30px;
+            display: block;
+        }
+        
+        .site-title {
+            font-size: 1.2em;
+            font-weight: 600;
+            margin-bottom: 10px;
+            letter-spacing: 0.05em;
+        }
+        
+        .site-subtitle {
+            font-size: 0.9em;
+            color: #666;
+            font-weight: 400;
+        }
+        
+        /* メインコンテンツ */
+        main {
+            padding: 60px 0;
+        }
+        
+        section {
+            margin-bottom: 80px;
+        }
+        
+        h2 {
+            font-size: 1.1em;
+            font-weight: 600;
+            margin-bottom: 30px;
+            letter-spacing: 0.05em;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        h3 {
+            font-size: 1em;
+            font-weight: 600;
+            margin-top: 40px;
+            margin-bottom: 15px;
+            letter-spacing: 0.03em;
+        }
+        
+        p {
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        ul li {
+            margin-bottom: 8px;
+            color: #555;
+            padding-left: 1em;
+            text-indent: -1em;
+        }
+        
+        ul li:before {
+            content: "・";
+            padding-right: 0.5em;
+        }
+        
+        .detail-link {
+            display: inline-block;
+            color: #333;
+            text-decoration: none;
+            font-weight: 600;
+            margin: 10px 0 20px 0;
+            padding: 10px 20px;
+            border: 1px solid #333;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        
+        .detail-link:hover {
+            background: #333;
+            color: #fff;
+        }
+        
+        /* 実績セクション */
+        .credentials-list {
+            display: grid;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .credential-item {
+            padding: 20px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .credential-item:last-child {
+            border-bottom: none;
+        }
+        
+        .credential-title {
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .credential-detail {
+            color: #666;
+            font-size: 0.95em;
+        }
+        
+        /* AI特別セクション */
+        .ai-note {
+            background: #f8f8f8;
+            padding: 30px;
+            margin-top: 30px;
+            border-left: 3px solid #333;
+        }
+        
+        .ai-note h4 {
+            font-size: 0.95em;
+            font-weight: 600;
+            margin-bottom: 15px;
+            letter-spacing: 0.03em;
+        }
+        
+        .ai-note p {
+            font-size: 0.95em;
+            margin-bottom: 0;
+        }
+        
+        /* フッター */
+        footer {
+            border-top: 1px solid #ddd;
+            padding: 40px 0;
+            margin-top: 80px;
+        }
+        
+        .footer-content {
+            text-align: center;
+        }
+        
+        .footer-logo {
+            width: 80px;
+            height: auto;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+        
+        .footer-name {
+            font-size: 0.95em;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .footer-copyright {
+            font-size: 0.85em;
+            color: #999;
+        }
+        
+        /* レスポンシブ */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 25px;
+            }
+            
+            header {
+                padding: 50px 0 40px;
+            }
+            
+            main {
+                padding: 40px 0;
+            }
+            
+            section {
+                margin-bottom: 60px;
+            }
+            
+            .ai-note {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="logo.png" alt="スカイマージ" class="logo">
+            <h1 class="site-title">倉澤心 ／ スカイマージ</h1>
+            <p class="site-subtitle">DX SUPPORT SERVICES</p>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section>
+                <p>
+                    企業のIT/DX担当者の代わりとして機能する支援サービス、業務課題を解決するアプリ・ツールの開発、そして自社で開発できる人材を育成するプログラムを提供しています。IT人材が不足している企業や、専任担当者を置けない中小企業のデジタル変革をサポートします。
+                </p>
+            </section>
+
+            <section>
+                <h2>サービス内容</h2>
+                
+                <h3>IT/DX支援サービス</h3>
+                <p>社内IT/DX担当者の代わりとして、企業のデジタル変革を包括的にサポートします。DX戦略の立案から、既存ツールの導入、AppSheetやGASを使った内製アプリの構築まで、企業のIT/DX業務を代行・サポートします。</p>
+                <ul>
+                    <li>DX戦略立案・推進支援</li>
+                    <li>業務プロセスの分析・改善提案</li>
+                    <li>SaaS/ITツールの選定・導入代行</li>
+                    <li>AppSheet/GASでの業務アプリ構築代行</li>
+                    <li>データ活用・分析支援</li>
+                    <li>社内IT環境の整備・運用サポート</li>
+                </ul>
+
+                <h3>DXアプリ/ツール開発サービス</h3>
+                <p>企業の業務課題を解決するカスタムアプリケーションやツールを開発します。AppSheetやGAS、スプレッドシートを中心に、スピーディで柔軟な開発を提供します。</p>
+                <ul>
+                    <li>AppSheetによる業務アプリ開発</li>
+                    <li>GASによる自動化ツール開発</li>
+                    <li>スプレッドシートを活用した業務効率化</li>
+                    <li>Googleワークスペース連携ツール開発</li>
+                    <li>データ可視化ダッシュボード構築</li>
+                    <li>既存システムとのAPI連携開発</li>
+                </ul>
+
+                <h3>社内DX人材育成サービス</h3>
+                <p>自社でDXアプリ/ツールを開発・運用できる人材を育成します。実践的なトレーニングを通じて、AppSheetやGAS、そしてAIツールを活用した内製開発スキルを習得し、将来的には自走できる体制を構築します。</p>
+                <p><a href="training-program.html" class="detail-link">サービスの詳細を見る →</a></p>
+                <ul>
+                    <li>AI活用による開発手法の習得</li>
+                    <li>AppSheet開発トレーニング</li>
+                    <li>GAS（Google Apps Script）プログラミング研修</li>
+                    <li>業務分析・要件定義スキル研修</li>
+                    <li>実践型ハンズオン（自社課題での開発演習）</li>
+                    <li>開発後のメンテナンス・改善指導</li>
+                </ul>
+
+                <div class="ai-note">
+                    <h4>AI活用による内製化の民主化</h4>
+                    <p>ChatGPTやClaude等の生成AIを活用することで、コードの自動生成やデバッグ支援が可能になり、プログラミング経験が浅い方でも業務アプリの開発ができるようになりました。現場の業務を最も理解している担当者自身が、自分たちに最適なツールを作れる時代が到来しています。</p>
+                </div>
+            </section>
+
+            <section>
+                <h2>実績・経験</h2>
+                <div class="credentials-list">
+                    <div class="credential-item">
+                        <div class="credential-title">ITを活用した業務改善</div>
+                        <div class="credential-detail">2009年から15年以上の実績 / サポート実績200件以上</div>
+                    </div>
+                    <div class="credential-item">
+                        <div class="credential-title">AI活用</div>
+                        <div class="credential-detail">生成AI最前線で実践・研究</div>
+                    </div>
+                    <div class="credential-item">
+                        <div class="credential-title">組織支援</div>
+                        <div class="credential-detail">推進体制づくりから伴走経験多数</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <img src="logo.png" alt="スカイマージ" class="footer-logo">
+                <div class="footer-name">倉澤心 ／ スカイマージ</div>
+                <div class="footer-copyright">&copy; 2025 DX Support Services</div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

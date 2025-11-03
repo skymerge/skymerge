@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>社内DX人材育成サービス | 倉澤心 ／ スカイマージ</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', 'Meiryo', sans-serif;
+            line-height: 2;
+            color: #333;
+            background-color: #fff;
+            font-size: 16px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+        
+        /* ヘッダー */
+        header {
+            padding: 40px 0;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .logo {
+            width: 60px;
+            height: auto;
+        }
+        
+        .site-info h1 {
+            font-size: 1em;
+            font-weight: 600;
+            margin-bottom: 5px;
+            letter-spacing: 0.03em;
+        }
+        
+        .site-info p {
+            font-size: 0.75em;
+            color: #666;
+            margin: 0;
+        }
+        
+        .back-link {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            padding: 10px 20px;
+            border: 1px solid #333;
+            border-radius: 4px;
+            font-size: 0.9em;
+            transition: all 0.3s ease;
+        }
+        
+        .back-link:hover {
+            background: #333;
+            color: #fff;
+        }
+        
+        /* メインコンテンツ */
+        main {
+            padding: 60px 0;
+        }
+        
+        .page-title {
+            font-size: 1.8em;
+            font-weight: 600;
+            margin-bottom: 20px;
+            letter-spacing: 0.03em;
+        }
+        
+        .page-subtitle {
+            font-size: 1.1em;
+            color: #666;
+            margin-bottom: 60px;
+            line-height: 1.8;
+        }
+        
+        section {
+            margin-bottom: 80px;
+        }
+        
+        h2 {
+            font-size: 1.3em;
+            font-weight: 600;
+            margin-bottom: 30px;
+            letter-spacing: 0.03em;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        h3 {
+            font-size: 1.1em;
+            font-weight: 600;
+            margin-top: 40px;
+            margin-bottom: 15px;
+            letter-spacing: 0.03em;
+        }
+        
+        p {
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        ul {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 20px;
+        }
+        
+        ul li {
+            margin-bottom: 8px;
+            color: #555;
+            padding-left: 1em;
+            text-indent: -1em;
+        }
+        
+        ul li:before {
+            content: "・";
+            padding-right: 0.5em;
+        }
+        
+        .highlight-box {
+            background: #f8f8f8;
+            padding: 30px;
+            margin: 30px 0;
+            border-left: 3px solid #333;
+        }
+        
+        .highlight-box h4 {
+            font-size: 1em;
+            font-weight: 600;
+            margin-bottom: 15px;
+            letter-spacing: 0.03em;
+        }
+        
+        .note-box {
+            background: #f8f8f8;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 4px;
+        }
+        
+        .industry-grid {
+            display: grid;
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .industry-item {
+            padding-bottom: 30px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .industry-item:last-child {
+            border-bottom: none;
+        }
+        
+        .industry-title {
+            font-weight: 600;
+            margin-bottom: 15px;
+            font-size: 1.05em;
+        }
+        
+        /* フッター */
+        footer {
+            border-top: 1px solid #ddd;
+            padding: 40px 0;
+            margin-top: 80px;
+        }
+        
+        .footer-content {
+            text-align: center;
+        }
+        
+        .footer-logo {
+            width: 80px;
+            height: auto;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+        
+        .footer-name {
+            font-size: 0.95em;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .footer-copyright {
+            font-size: 0.85em;
+            color: #999;
+            margin-bottom: 20px;
+        }
+        
+        /* レスポンシブ */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 25px;
+            }
+            
+            header {
+                padding: 30px 0;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                gap: 20px;
+                align-items: flex-start;
+            }
+            
+            .page-title {
+                font-size: 1.5em;
+            }
+            
+            main {
+                padding: 40px 0;
+            }
+            
+            section {
+                margin-bottom: 60px;
+            }
+            
+            .highlight-box, .note-box {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="header-left">
+                    <img src="logo.png" alt="スカイマージ" class="logo">
+                    <div class="site-info">
+                        <h1>倉澤心 ／ スカイマージ</h1>
+                        <p>DX SUPPORT SERVICES</p>
+                    </div>
+                </div>
+                <a href="index.html" class="back-link">← トップに戻る</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <h1 class="page-title">社内DX人材育成サービス</h1>
+            <p class="page-subtitle">御社のDX推進チームをゼロから立ち上げ、育成します。AIを武器にしたDX推進部門の構築から、自走できる組織体制まで伴走サポート。</p>
+
+            <div class="highlight-box">
+                <h4>厚生労働省の助成金対象サービスです</h4>
+                <p>本サービスは、厚生労働省の<strong>人材開発支援助成金（事業展開等リスキリング支援コース）</strong>の対象となります。新規事業の立ち上げなどの事業展開等に伴い、新たな分野で必要となる知識及び技能を習得させるための訓練として、訓練経費や訓練期間中の賃金の一部が助成されます。</p>
+                <p style="margin-bottom: 0; margin-top: 10px;">詳しくは<a href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/koyou/kyufukin/d01-1.html#1005" target="_blank" style="color: #333; text-decoration: underline;">厚生労働省のウェブサイト</a>をご確認いただくか、管轄の労働局にお問い合わせください。</p>
+            </div>
+
+            <section>
+                <h2>DXが進まない、本当の理由</h2>
+                
+                <h3>よくある失敗パターン</h3>
+                <ul>
+                    <li>経営者だけが「DXやろう」と言っている</li>
+                    <li>総務や情シスに丸投げされている</li>
+                    <li>誰も責任を持って推進していない</li>
+                    <li>現場は「いつもの仕事」で手一杯</li>
+                </ul>
+
+                <div class="highlight-box">
+                    <h4>DXが進まないのは、「推進する組織」がないから</h4>
+                    <p>ツールを導入しても使い方を教えられない、AI活用を検討したいが調べる時間がない、部門間の調整ができず全社展開が進まない、経営層への報告ができず予算がつかない。こうした状況は、DX推進を専門に担当する組織がないことが原因です。</p>
+                </div>
+            </section>
+
+            <section>
+                <h2>なぜDX推進チーム/部門が必要なのか</h2>
+                
+                <h3>DX推進チームの役割</h3>
+                <ul>
+                    <li>全社のDX戦略を立案し、場当たり的ではなく計画的に推進</li>
+                    <li>各部門の橋渡しとして、現場の課題を吸い上げ解決策を提案</li>
+                    <li>AIを含む最新技術の評価と導入判断</li>
+                    <li>新しいツールを現場に浸透させるための社内教育の実施</li>
+                    <li>成果を可視化し、経営層へ報告して継続投資を獲得</li>
+                </ul>
+
+                <div class="note-box">
+                    <strong>成功企業の共通点</strong>
+                    <p>DXが成功している企業は、必ず「推進する組織」があります。専任でも兼任でも構いません。重要なのは、DX推進という役割を持ったチーム・部門が存在することです。</p>
+                </div>
+            </section>
+
+            <section>
+                <h2>私たちが、御社のDX推進チームをサポートします</h2>
+                
+                <p>御社のDX推進チームの外部メンバーとして伴走します。立ち上げから自走まで、あらゆる場面でサポートします。</p>
+
+                <h3>サポート内容</h3>
+                <ul>
+                    <li>DX推進チーム/部門の立ち上げ設計</li>
+                    <li>推進担当者へのスキル移転・育成</li>
+                    <li>AIを活用したDX戦略の策定</li>
+                    <li>各部門への展開サポート</li>
+                    <li>経営層への報告資料作成支援</li>
+                    <li>壁打ち相手・相談役</li>
+                </ul>
+
+                <div class="highlight-box">
+                    <h4>6ヶ月後の目標</h4>
+                    <p>私たちがいなくても、DX推進チームが自走できる状態を目指します。</p>
+                </div>
+            </section>
+
+            <section>
+                <h2>DX推進チームの立ち上げから支援</h2>
+                
+                <h3>体制設計 - DX推進チームの立ち上げ</h3>
+                <ul>
+                    <li>専任 or 兼任の判断（兼任でもOK）</li>
+                    <li>誰をメンバーにするか</li>
+                    <li>経営層の関与度の設計</li>
+                    <li>各部門との連携体制</li>
+                </ul>
+
+                <h3>役割・ミッション定義 - 何をする組織なのか明確にする</h3>
+                <ul>
+                    <li>DX推進チームの目的・ゴール設定</li>
+                    <li>権限と責任の範囲</li>
+                    <li>KPI・評価指標の設定</li>
+                    <li>予算の確保方法</li>
+                </ul>
+
+                <h3>初期施策の実行 - 小さな成功で信頼を獲得</h3>
+                <ul>
+                    <li>クイックウィン案件の選定</li>
+                    <li>AIを活用した業務効率化</li>
+                    <li>成果の可視化・報告</li>
+                    <li>社内への認知拡大</li>
+                </ul>
+
+                <h3>組織の定着 - 継続的に機能する体制へ</h3>
+                <ul>
+                    <li>推進プロセスの標準化</li>
+                    <li>ナレッジの蓄積</li>
+                    <li>後任への引き継ぎ体制</li>
+                    <li>完全自走化</li>
+                </ul>
+
+                <div class="note-box">
+                    <strong>既にメンバーがいる場合も対応</strong>
+                    <p>既にDX推進を担当している方がいる場合は、その方を中心にチームを強化します。「何をすればいいか分からない」状態から、自信を持って推進できるチームへ導きます。専任・兼任は問いません。</p>
+                </div>
+            </section>
+
+            <section>
+                <h2>AI活用が鍵となる理由</h2>
+                
+                <p>従来のDXは「ツールを導入して終わり」でしたが、これからのDXはAIを活用した業務改革が中心になります。</p>
+
+                <h3>AIで実現できること</h3>
+                <ul>
+                    <li>議事録の自動作成で会議後の事務作業を削減</li>
+                    <li>過去の資料をAIが検索し、提案書作成を支援</li>
+                    <li>マニュアルをAI化し、誰でも即座に回答を得られる</li>
+                    <li>データ分析をAIが代行し、意思決定を高速化</li>
+                    <li>プログラミング不要で業務アプリを作成</li>
+                </ul>
+
+                <div class="highlight-box">
+                    <h4>AI活用による内製化の民主化</h4>
+                    <p>ChatGPTやClaude等の生成AIを活用することで、コードの自動生成やデバッグ支援が可能になり、プログラミング経験が浅い方でも業務アプリの開発ができるようになりました。現場の業務を最も理解している担当者自身が、自分たちに最適なツールを作れる時代が到来しています。</p>
+                </div>
+            </section>
+
+            <section>
+                <h2>サービス提供の流れ</h2>
+                
+                <h3>立ち上げフェーズ（1ヶ月）</h3>
+                <ul>
+                    <li>DX推進チームの体制設計</li>
+                    <li>役割・ミッション・KPIの策定</li>
+                    <li>初期メンバーの選定・研修</li>
+                </ul>
+
+                <h3>実行フェーズ（2-3ヶ月）</h3>
+                <ul>
+                    <li>クイックウィン案件の実行</li>
+                    <li>AI活用事例の創出</li>
+                    <li>成果の可視化・報告</li>
+                    <li>全社展開の準備</li>
+                </ul>
+
+                <h3>自走化フェーズ（3-6ヶ月）</h3>
+                <ul>
+                    <li>推進プロセスの標準化</li>
+                    <li>チームの完全自走化</li>
+                    <li>継続的改善の仕組み構築</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>よくある質問</h2>
+                
+                <h3>Q. 専任のDX担当者がいないのですが大丈夫ですか？</h3>
+                <p>A. 問題ありません。兼任でもスタート可能です。まずは1-2名の兼任メンバーから始めて、成果が出てから専任化するケースが多いです。</p>
+
+                <h3>Q. IT知識がほとんどないのですが対応できますか？</h3>
+                <p>A. 対応できます。AIを活用することで、プログラミング知識がなくても業務改善や簡単なアプリ開発が可能です。必要なスキルは実践の中で習得していただきます。</p>
+
+                <h3>Q. どのくらいの期間で成果が出ますか？</h3>
+                <p>A. 小さな成果（クイックウィン）は1-2ヶ月で出すことを目指します。組織としての自走化は6ヶ月程度を想定しています。</p>
+
+                <h3>Q. 支援終了後も相談できますか？</h3>
+                <p>A. はい、可能です。自走化後もスポットでのご相談や、継続的なアドバイザリー契約も承っております。</p>
+
+                <h3>Q. 費用はどのくらいかかりますか？</h3>
+                <p>A. 企業規模や支援内容により異なります。初回ヒアリング（無料）で詳しくご案内いたしますので、まずはお気軽にお問い合わせください。</p>
+            </section>
+
+            <section>
+                <h2>業種別のDX推進例</h2>
+                <p>御社の業種に合わせたDX推進を支援します。</p>
+
+                <div class="industry-grid">
+                    <div class="industry-item">
+                        <div class="industry-title">製造業</div>
+                        <p><strong>DX推進の課題:</strong></p>
+                        <ul>
+                            <li>図面・仕様書の管理が属人化</li>
+                            <li>生産計画の調整に時間がかかる</li>
+                            <li>品質データが活用できていない</li>
+                        </ul>
+                        <p><strong>AI×DXで解決:</strong></p>
+                        <ul>
+                            <li>マニュアルのAI検索化</li>
+                            <li>在庫予測の精度向上</li>
+                            <li>品質レポートの自動生成</li>
+                        </ul>
+                    </div>
+
+                    <div class="industry-item">
+                        <div class="industry-title">卸売・小売業</div>
+                        <p><strong>DX推進の課題:</strong></p>
+                        <ul>
+                            <li>発注業務が手作業</li>
+                            <li>在庫管理がExcel地獄</li>
+                            <li>顧客対応の記録が散在</li>
+                        </ul>
+                        <p><strong>AI×DXで解決:</strong></p>
+                        <ul>
+                            <li>発注データの自動入力</li>
+                            <li>需要予測による在庫最適化</li>
+                            <li>顧客対応履歴のAI検索</li>
+                        </ul>
+                    </div>
+
+                    <div class="industry-item">
+                        <div class="industry-title">サービス業</div>
+                        <p><strong>DX推進の課題:</strong></p>
+                        <ul>
+                            <li>提案資料作成に時間がかかる</li>
+                            <li>顧客情報が分散している</li>
+                            <li>ナレッジが共有されない</li>
+                        </ul>
+                        <p><strong>AI×DXで解決:</strong></p>
+                        <ul>
+                            <li>提案資料のAI生成</li>
+                            <li>顧客情報の一元管理</li>
+                            <li>社内FAQのAI化</li>
+                        </ul>
+                    </div>
+
+                    <div class="industry-item">
+                        <div class="industry-title">建設・不動産</div>
+                        <p><strong>DX推進の課題:</strong></p>
+                        <ul>
+                            <li>現場と本社の情報共有が遅い</li>
+                            <li>契約書・図面の管理が煩雑</li>
+                            <li>進捗管理が属人的</li>
+                        </ul>
+                        <p><strong>AI×DXで解決:</strong></p>
+                        <ul>
+                            <li>現場報告のデジタル化</li>
+                            <li>契約書・図面のクラウド管理とAI検索</li>
+                            <li>進捗の可視化と自動アラート</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <img src="logo.png" alt="スカイマージ" class="footer-logo">
+                <div class="footer-name">倉澤心 ／ スカイマージ</div>
+                <div class="footer-copyright">&copy; 2025 DX Support Services</div>
+                <a href="index.html" class="back-link">トップページへ戻る</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
