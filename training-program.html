@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +11,7 @@
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', 'Meiryo', sans-serif;
             line-height: 2;
@@ -18,49 +19,49 @@
             background-color: #fff;
             font-size: 16px;
         }
-        
+
         .container {
             max-width: 800px;
             margin: 0 auto;
             padding: 0 40px;
         }
-        
+
         /* ヘッダー */
         header {
             padding: 40px 0;
             border-bottom: 1px solid #ddd;
         }
-        
+
         .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-        
+
         .header-left {
             display: flex;
             align-items: center;
             gap: 20px;
         }
-        
+
         .logo {
             width: 60px;
             height: auto;
         }
-        
+
         .site-info h1 {
             font-size: 1em;
             font-weight: 600;
             margin-bottom: 5px;
             letter-spacing: 0.03em;
         }
-        
+
         .site-info p {
             font-size: 0.75em;
             color: #666;
             margin: 0;
         }
-        
+
         .back-link {
             text-decoration: none;
             color: #333;
@@ -71,35 +72,35 @@
             font-size: 0.9em;
             transition: all 0.3s ease;
         }
-        
+
         .back-link:hover {
             background: #333;
             color: #fff;
         }
-        
+
         /* メインコンテンツ */
         main {
             padding: 60px 0;
         }
-        
+
         .page-title {
             font-size: 1.8em;
             font-weight: 600;
             margin-bottom: 20px;
             letter-spacing: 0.03em;
         }
-        
+
         .page-subtitle {
             font-size: 1.1em;
             color: #666;
             margin-bottom: 60px;
             line-height: 1.8;
         }
-        
+
         section {
             margin-bottom: 80px;
         }
-        
+
         h2 {
             font-size: 1.3em;
             font-weight: 600;
@@ -108,7 +109,7 @@
             padding-bottom: 10px;
             border-bottom: 1px solid #ddd;
         }
-        
+
         h3 {
             font-size: 1.1em;
             font-weight: 600;
@@ -116,136 +117,138 @@
             margin-bottom: 15px;
             letter-spacing: 0.03em;
         }
-        
+
         p {
             margin-bottom: 20px;
             color: #333;
         }
-        
+
         ul {
             list-style: none;
             padding-left: 0;
             margin-bottom: 20px;
         }
-        
+
         ul li {
             margin-bottom: 8px;
             color: #555;
             padding-left: 1em;
             text-indent: -1em;
         }
-        
+
         ul li:before {
             content: "・";
             padding-right: 0.5em;
         }
-        
+
         .highlight-box {
             background: #f8f8f8;
             padding: 30px;
             margin: 30px 0;
             border-left: 3px solid #333;
         }
-        
+
         .highlight-box h4 {
             font-size: 1em;
             font-weight: 600;
             margin-bottom: 15px;
             letter-spacing: 0.03em;
         }
-        
+
         .note-box {
             background: #f8f8f8;
             padding: 25px;
             margin: 30px 0;
             border-radius: 4px;
         }
-        
+
         .industry-grid {
             display: grid;
             gap: 30px;
             margin-top: 30px;
         }
-        
+
         .industry-item {
             padding-bottom: 30px;
             border-bottom: 1px solid #f0f0f0;
         }
-        
+
         .industry-item:last-child {
             border-bottom: none;
         }
-        
+
         .industry-title {
             font-weight: 600;
             margin-bottom: 15px;
             font-size: 1.05em;
         }
-        
+
         /* フッター */
         footer {
             border-top: 1px solid #ddd;
             padding: 40px 0;
             margin-top: 80px;
         }
-        
+
         .footer-content {
             text-align: center;
         }
-        
+
         .footer-logo {
             width: 80px;
             height: auto;
             margin-bottom: 20px;
             display: inline-block;
         }
-        
+
         .footer-name {
             font-size: 0.95em;
             font-weight: 600;
             margin-bottom: 10px;
         }
-        
+
         .footer-copyright {
             font-size: 0.85em;
             color: #999;
             margin-bottom: 20px;
         }
-        
+
         /* レスポンシブ */
         @media (max-width: 768px) {
             .container {
                 padding: 0 25px;
             }
-            
+
             header {
                 padding: 30px 0;
             }
-            
+
             .header-content {
                 flex-direction: column;
                 gap: 20px;
                 align-items: flex-start;
             }
-            
+
             .page-title {
                 font-size: 1.5em;
             }
-            
+
             main {
                 padding: 40px 0;
             }
-            
+
             section {
                 margin-bottom: 60px;
             }
-            
-            .highlight-box, .note-box {
+
+            .highlight-box,
+            .note-box {
                 padding: 20px;
             }
         }
     </style>
 </head>
+
 <body>
     <header>
         <div class="container">
@@ -269,13 +272,18 @@
 
             <div class="highlight-box">
                 <h4>厚生労働省の助成金対象サービスです</h4>
-                <p>本サービスは、厚生労働省の<strong>人材開発支援助成金（事業展開等リスキリング支援コース）</strong>の対象となります。新規事業の立ち上げなどの事業展開等に伴い、新たな分野で必要となる知識及び技能を習得させるための訓練として、訓練経費や訓練期間中の賃金の一部が助成されます。</p>
-                <p style="margin-bottom: 0; margin-top: 10px;">詳しくは<a href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/koyou/kyufukin/d01-1.html#1005" target="_blank" style="color: #333; text-decoration: underline;">厚生労働省のウェブサイト</a>をご確認いただくか、管轄の労働局にお問い合わせください。</p>
+                <p>本サービスは、厚生労働省の<strong>人材開発支援助成金（事業展開等リスキリング支援コース）</strong>の対象となります。新規事業の立ち上げなどの事業展開等に伴い、新たな分野で必要となる知識及び技能を習得させるための訓練として、訓練経費や訓練期間中の賃金の一部が助成されます。
+                </p>
+                <p style="margin-bottom: 0; margin-top: 10px;">詳しくは<a
+                        href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/koyou/kyufukin/d01-1.html#1005"
+                        target="_blank"
+                        style="color: #333; text-decoration: underline;">厚生労働省のウェブサイト</a>をご確認いただくか、管轄の労働局にお問い合わせください。
+                </p>
             </div>
 
             <section>
                 <h2>DXが進まない、本当の理由</h2>
-                
+
                 <h3>よくある失敗パターン</h3>
                 <ul>
                     <li>経営者だけが「DXやろう」と言っている</li>
@@ -286,13 +294,14 @@
 
                 <div class="highlight-box">
                     <h4>DXが進まないのは、「推進する組織」がないから</h4>
-                    <p>ツールを導入しても使い方を教えられない、AI活用を検討したいが調べる時間がない、部門間の調整ができず全社展開が進まない、経営層への報告ができず予算がつかない。こうした状況は、DX推進を専門に担当する組織がないことが原因です。</p>
+                    <p>ツールを導入しても使い方を教えられない、AI活用を検討したいが調べる時間がない、部門間の調整ができず全社展開が進まない、経営層への報告ができず予算がつかない。こうした状況は、DX推進を専門に担当する組織がないことが原因です。
+                    </p>
                 </div>
             </section>
 
             <section>
                 <h2>なぜDX推進チーム/部門が必要なのか</h2>
-                
+
                 <h3>DX推進チームの役割</h3>
                 <ul>
                     <li>全社のDX戦略を立案し、場当たり的ではなく計画的に推進</li>
@@ -310,7 +319,7 @@
 
             <section>
                 <h2>私たちが、御社のDX推進チームをサポートします</h2>
-                
+
                 <p>御社のDX推進チームの外部メンバーとして伴走します。立ち上げから自走まで、あらゆる場面でサポートします。</p>
 
                 <h3>サポート内容</h3>
@@ -331,7 +340,7 @@
 
             <section>
                 <h2>DX推進チームの立ち上げから支援</h2>
-                
+
                 <h3>体制設計 - DX推進チームの立ち上げ</h3>
                 <ul>
                     <li>専任 or 兼任の判断（兼任でもOK）</li>
@@ -372,7 +381,7 @@
 
             <section>
                 <h2>AI活用が鍵となる理由</h2>
-                
+
                 <p>従来のDXは「ツールを導入して終わり」でしたが、これからのDXはAIを活用した業務改革が中心になります。</p>
 
                 <h3>AIで実現できること</h3>
@@ -386,13 +395,14 @@
 
                 <div class="highlight-box">
                     <h4>AI活用による内製化の民主化</h4>
-                    <p>ChatGPTやClaude等の生成AIを活用することで、コードの自動生成やデバッグ支援が可能になり、プログラミング経験が浅い方でも業務アプリの開発ができるようになりました。現場の業務を最も理解している担当者自身が、自分たちに最適なツールを作れる時代が到来しています。</p>
+                    <p>ChatGPTやClaude等の生成AIを活用することで、コードの自動生成やデバッグ支援が可能になり、プログラミング経験が浅い方でも業務アプリの開発ができるようになりました。現場の業務を最も理解している担当者自身が、自分たちに最適なツールを作れる時代が到来しています。
+                    </p>
                 </div>
             </section>
 
             <section>
                 <h2>サービス提供の流れ</h2>
-                
+
                 <h3>立ち上げフェーズ（1ヶ月）</h3>
                 <ul>
                     <li>DX推進チームの体制設計</li>
@@ -418,7 +428,7 @@
 
             <section>
                 <h2>よくある質問</h2>
-                
+
                 <h3>Q. 専任のDX担当者がいないのですが大丈夫ですか？</h3>
                 <p>A. 問題ありません。兼任でもスタート可能です。まずは1-2名の兼任メンバーから始めて、成果が出てから専任化するケースが多いです。</p>
 
@@ -519,4 +529,5 @@
         </div>
     </footer>
 </body>
+
 </html>
