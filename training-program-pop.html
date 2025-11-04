@@ -138,15 +138,6 @@
             overflow: hidden;
         }
 
-        .subsidy-box::before {
-            content: '💰';
-            position: absolute;
-            font-size: 120px;
-            top: -20px;
-            right: 20px;
-            opacity: 0.2;
-        }
-
         .subsidy-box h3 {
             font-size: 1.8em;
             font-weight: 900;
@@ -230,13 +221,6 @@
             transform: translateY(-5px);
         }
 
-        .failure-item::before {
-            content: '❌';
-            font-size: 40px;
-            display: block;
-            margin-bottom: 15px;
-        }
-
         /* ハイライトボックス */
         .highlight-box {
             background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 100%);
@@ -245,15 +229,6 @@
             border-radius: 20px;
             border-left: 8px solid #00acc1;
             position: relative;
-        }
-
-        .highlight-box::before {
-            content: '💡';
-            position: absolute;
-            font-size: 60px;
-            top: 20px;
-            right: 30px;
-            opacity: 0.3;
         }
 
         .highlight-box h4 {
@@ -333,11 +308,6 @@
             box-shadow: 0 15px 40px rgba(102, 126, 234, 0.2);
         }
 
-        .feature-icon {
-            font-size: 60px;
-            margin-bottom: 20px;
-        }
-
         .feature-card h3 {
             font-size: 1.5em;
             font-weight: 900;
@@ -361,30 +331,28 @@
             margin-bottom: 30px;
             border-radius: 25px;
             box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-            display: flex;
-            gap: 30px;
-            align-items: center;
             transition: all 0.3s ease;
         }
 
         .step-card:hover {
-            transform: translateX(10px);
+            transform: translateY(-5px);
             box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
         }
 
         .step-number {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2em;
+            padding: 8px 20px;
+            border-radius: 50px;
+            display: inline-block;
+            font-size: 1em;
             font-weight: 900;
-            flex-shrink: 0;
-            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+            white-space: nowrap;
+        }
+
+        .step-content {
+            margin-top: 20px;
         }
 
         .step-content h3 {
@@ -536,11 +504,6 @@
                 grid-template-columns: 1fr;
             }
 
-            .step-card {
-                flex-direction: column;
-                text-align: center;
-            }
-
             section {
                 padding: 40px 25px;
             }
@@ -556,7 +519,7 @@
 <body>
     <div class="hero">
         <div class="hero-content">
-            <div class="hero-badge">🎯 DX推進チームの立ち上げから支援</div>
+            <div class="hero-badge">DX推進チームの立ち上げから支援</div>
             <h1>
                 社内DX人材育成<br>
                 サービス
@@ -572,7 +535,7 @@
     <main>
         <div class="container">
             <div class="subsidy-box">
-                <h3>🎉 厚生労働省の助成金対象サービスです！</h3>
+                <h3>厚生労働省の助成金対象サービスです！</h3>
                 <p>本サービスは、厚生労働省の<strong>人材開発支援助成金（事業展開等リスキリング支援コース）</strong>の対象となります。新規事業の立ち上げなどの事業展開等に伴い、新たな分野で必要となる知識及び技能を習得させるための訓練として、訓練経費や訓練期間中の賃金の一部が助成されます。
                 </p>
                 <p style="margin-top: 15px;">詳しくは<a
@@ -583,7 +546,7 @@
 
             <section>
                 <div class="section-header">
-                    <div class="section-badge">❌ PROBLEM</div>
+                    <div class="section-badge">PROBLEM</div>
                     <h2 class="section-title">DXが進まない、本当の理由</h2>
                     <p class="section-subtitle">こんなお悩み、ありませんか?</p>
                 </div>
@@ -612,7 +575,7 @@
 
             <section>
                 <div class="section-header">
-                    <div class="section-badge">🎯 SOLUTION</div>
+                    <div class="section-badge">SOLUTION</div>
                     <h2 class="section-title">なぜDX推進チーム/部門が<br>必要なのか</h2>
                 </div>
 
@@ -632,39 +595,33 @@
 
             <section>
                 <div class="section-header">
-                    <div class="section-badge">💪 OUR SERVICE</div>
+                    <div class="section-badge">OUR SERVICE</div>
                     <h2 class="section-title">私たちが、御社のDX推進チームを<br>サポートします</h2>
                     <p class="section-subtitle">立ち上げから自走まで、あらゆる場面で伴走します</p>
                 </div>
 
                 <div class="features-grid">
                     <div class="feature-card">
-                        <div class="feature-icon">🚀</div>
                         <h3>立ち上げ設計</h3>
                         <p>DX推進チーム/部門の体制設計から役割定義まで、ゼロから構築します</p>
                     </div>
                     <div class="feature-card">
-                        <div class="feature-icon">📚</div>
                         <h3>スキル移転</h3>
                         <p>推進担当者へのスキル移転・育成を実施。自信を持って推進できる人材を育てます</p>
                     </div>
                     <div class="feature-card">
-                        <div class="feature-icon">🤖</div>
                         <h3>AI戦略</h3>
                         <p>AIを活用したDX戦略を策定。最新技術で業務を革新します</p>
                     </div>
                     <div class="feature-card">
-                        <div class="feature-icon">🔄</div>
                         <h3>全社展開</h3>
                         <p>各部門への展開をサポート。現場に根付く仕組みを作ります</p>
                     </div>
                     <div class="feature-card">
-                        <div class="feature-icon">📊</div>
                         <h3>報告支援</h3>
                         <p>経営層への報告資料作成を支援。成果を可視化して投資を獲得</p>
                     </div>
                     <div class="feature-card">
-                        <div class="feature-icon">💬</div>
                         <h3>壁打ち相談</h3>
                         <p>いつでも相談できる壁打ち相手として、あなたのチームを支えます</p>
                     </div>
@@ -678,13 +635,13 @@
 
             <section>
                 <div class="section-header">
-                    <div class="section-badge">📋 PROCESS</div>
+                    <div class="section-badge">PROCESS</div>
                     <h2 class="section-title">DX推進チームの<br>立ち上げから支援</h2>
                 </div>
 
                 <div class="steps-container">
                     <div class="step-card">
-                        <div class="step-number">1</div>
+                        <div class="step-number">STEP 1</div>
                         <div class="step-content">
                             <h3>体制設計 - DX推進チームの立ち上げ</h3>
                             <ul>
@@ -697,7 +654,7 @@
                     </div>
 
                     <div class="step-card">
-                        <div class="step-number">2</div>
+                        <div class="step-number">STEP 2</div>
                         <div class="step-content">
                             <h3>役割・ミッション定義 - 何をする組織なのか明確にする</h3>
                             <ul>
@@ -710,7 +667,7 @@
                     </div>
 
                     <div class="step-card">
-                        <div class="step-number">3</div>
+                        <div class="step-number">STEP 3</div>
                         <div class="step-content">
                             <h3>初期施策の実行 - 小さな成功で信頼を獲得</h3>
                             <ul>
@@ -723,7 +680,7 @@
                     </div>
 
                     <div class="step-card">
-                        <div class="step-number">4</div>
+                        <div class="step-number">STEP 4</div>
                         <div class="step-content">
                             <h3>組織の定着 - 継続的に機能する体制へ</h3>
                             <ul>
@@ -744,7 +701,7 @@
 
             <section>
                 <div class="section-header">
-                    <div class="section-badge">🤖 AI POWERED</div>
+                    <div class="section-badge">AI POWERED</div>
                     <h2 class="section-title">AI活用が鍵となる理由</h2>
                     <p class="section-subtitle">これからのDXはAIを活用した業務改革が中心です</p>
                 </div>
@@ -766,14 +723,14 @@
 
             <section>
                 <div class="section-header">
-                    <div class="section-badge">🏢 INDUSTRIES</div>
+                    <div class="section-badge">INDUSTRIES</div>
                     <h2 class="section-title">業種別のDX推進例</h2>
                     <p class="section-subtitle">御社の業種に合わせたDX推進を支援します</p>
                 </div>
 
                 <div class="industry-grid">
                     <div class="industry-card">
-                        <div class="industry-title">🏭 製造業</div>
+                        <div class="industry-title">製造業</div>
                         <div class="industry-section">
                             <div class="industry-section-title">DX推進の課題:</div>
                             <ul>
@@ -793,7 +750,7 @@
                     </div>
 
                     <div class="industry-card">
-                        <div class="industry-title">🛒 卸売・小売業</div>
+                        <div class="industry-title">卸売・小売業</div>
                         <div class="industry-section">
                             <div class="industry-section-title">DX推進の課題:</div>
                             <ul>
@@ -813,7 +770,7 @@
                     </div>
 
                     <div class="industry-card">
-                        <div class="industry-title">💼 サービス業</div>
+                        <div class="industry-title">サービス業</div>
                         <div class="industry-section">
                             <div class="industry-section-title">DX推進の課題:</div>
                             <ul>
@@ -833,7 +790,7 @@
                     </div>
 
                     <div class="industry-card">
-                        <div class="industry-title">🏗️ 建設・不動産</div>
+                        <div class="industry-title">建設・不動産</div>
                         <div class="industry-section">
                             <div class="industry-section-title">DX推進の課題:</div>
                             <ul>
@@ -856,7 +813,7 @@
 
             <section>
                 <div class="section-header">
-                    <div class="section-badge">⏱️ TIMELINE</div>
+                    <div class="section-badge">TIMELINE</div>
                     <h2 class="section-title">サービス提供の流れ</h2>
                 </div>
 
@@ -902,7 +859,7 @@
 
             <section>
                 <div class="section-header">
-                    <div class="section-badge">❓ FAQ</div>
+                    <div class="section-badge">FAQ</div>
                     <h2 class="section-title">よくある質問</h2>
                 </div>
 
