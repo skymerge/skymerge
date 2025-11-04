@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>社内DX人材育成サービス | 倉澤心 ／ スカイマージ</title>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'M PLUS Rounded 1c', 'Hiragino Sans', sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background-color: #fff;
+            font-size: 16px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ヒーローセクション */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -5%;
+            width: 500px;
+            height: 500px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -5%;
+            width: 400px;
+            height: 400px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 8px 24px;
+            border-radius: 50px;
+            font-size: 0.9em;
+            font-weight: 700;
+            margin-bottom: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .hero h1 {
+            font-size: 3em;
+            font-weight: 900;
+            margin-bottom: 30px;
+            line-height: 1.3;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero-highlight {
+            font-size: 1.3em;
+            background: linear-gradient(90deg, #ff6b6b, #ffd93d);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 900;
+            display: inline-block;
+            padding: 0 10px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3em;
+            margin-bottom: 40px;
+            line-height: 1.8;
+            opacity: 0.95;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff6b6b 0%, #ff8e53 100%);
+            color: white;
+            font-weight: 900;
+            font-size: 1.3em;
+            padding: 20px 50px;
+            border-radius: 50px;
+            text-decoration: none;
+            box-shadow: 0 8px 30px rgba(255, 107, 107, 0.4);
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(255, 107, 107, 0.5);
+        }
+
+        /* メインコンテンツ */
+        main {
+            padding: 80px 20px;
+            background: #f8f9ff;
+        }
+
+        /* 助成金バッジ */
+        .subsidy-box {
+            background: linear-gradient(135deg, #ffd93d 0%, #ffb347 100%);
+            padding: 40px;
+            margin-bottom: 60px;
+            border-radius: 20px;
+            box-shadow: 0 8px 30px rgba(255, 217, 61, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .subsidy-box::before {
+            content: '💰';
+            position: absolute;
+            font-size: 120px;
+            top: -20px;
+            right: 20px;
+            opacity: 0.2;
+        }
+
+        .subsidy-box h3 {
+            font-size: 1.8em;
+            font-weight: 900;
+            margin-bottom: 20px;
+            color: #333;
+            position: relative;
+        }
+
+        .subsidy-box p {
+            color: #333;
+            line-height: 1.9;
+            font-size: 1.05em;
+        }
+
+        .subsidy-box a {
+            color: #667eea;
+            font-weight: 700;
+            text-decoration: underline;
+        }
+
+        /* セクション */
+        section {
+            background: white;
+            padding: 60px 40px;
+            margin-bottom: 40px;
+            border-radius: 30px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.85em;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-size: 2.5em;
+            font-weight: 900;
+            margin-bottom: 20px;
+            color: #333;
+            line-height: 1.3;
+        }
+
+        .section-subtitle {
+            font-size: 1.2em;
+            color: #666;
+            line-height: 1.8;
+        }
+
+        /* 失敗パターン */
+        .failure-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .failure-item {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ff8e53 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            font-weight: 700;
+            font-size: 1.1em;
+            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .failure-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .failure-item::before {
+            content: '❌';
+            font-size: 40px;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        /* ハイライトボックス */
+        .highlight-box {
+            background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 100%);
+            padding: 40px;
+            margin: 40px 0;
+            border-radius: 20px;
+            border-left: 8px solid #00acc1;
+            position: relative;
+        }
+
+        .highlight-box::before {
+            content: '💡';
+            position: absolute;
+            font-size: 60px;
+            top: 20px;
+            right: 30px;
+            opacity: 0.3;
+        }
+
+        .highlight-box h4 {
+            font-size: 1.6em;
+            font-weight: 900;
+            margin-bottom: 20px;
+            color: #00695c;
+        }
+
+        .highlight-box p {
+            color: #004d40;
+            line-height: 1.9;
+            font-size: 1.05em;
+        }
+
+        /* チェックリスト */
+        .checklist {
+            list-style: none;
+            padding: 0;
+            margin-top: 30px;
+        }
+
+        .checklist li {
+            background: #f0f7ff;
+            padding: 20px 20px 20px 60px;
+            margin-bottom: 15px;
+            border-radius: 15px;
+            position: relative;
+            font-size: 1.05em;
+            border-left: 5px solid #667eea;
+            transition: all 0.3s ease;
+        }
+
+        .checklist li:hover {
+            background: #e3f2fd;
+            transform: translateX(5px);
+        }
+
+        .checklist li::before {
+            content: '✓';
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+        }
+
+        /* 特徴カード */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 40px;
+            border-radius: 25px;
+            text-align: center;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border: 3px solid transparent;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            border-color: #667eea;
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.2);
+        }
+
+        .feature-icon {
+            font-size: 60px;
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5em;
+            font-weight: 900;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .feature-card p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        /* ステップカード */
+        .steps-container {
+            margin-top: 50px;
+        }
+
+        .step-card {
+            background: white;
+            padding: 40px;
+            margin-bottom: 30px;
+            border-radius: 25px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+            display: flex;
+            gap: 30px;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .step-card:hover {
+            transform: translateX(10px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .step-number {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2em;
+            font-weight: 900;
+            flex-shrink: 0;
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+        }
+
+        .step-content h3 {
+            font-size: 1.5em;
+            font-weight: 900;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .step-content ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .step-content ul li {
+            padding: 8px 0 8px 25px;
+            position: relative;
+            color: #555;
+        }
+
+        .step-content ul li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: 900;
+        }
+
+        /* 業種カード */
+        .industry-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .industry-card {
+            background: linear-gradient(135deg, #f8f9ff 0%, #e8eeff 100%);
+            padding: 35px;
+            border-radius: 25px;
+            border: 3px solid #667eea;
+            transition: all 0.3s ease;
+        }
+
+        .industry-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.3);
+        }
+
+        .industry-title {
+            font-size: 1.5em;
+            font-weight: 900;
+            color: #667eea;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .industry-section {
+            margin-bottom: 20px;
+        }
+
+        .industry-section-title {
+            font-weight: 900;
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 1.05em;
+        }
+
+        .industry-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .industry-card ul li {
+            padding: 8px 0 8px 25px;
+            position: relative;
+            color: #555;
+            font-size: 0.95em;
+        }
+
+        .industry-card ul li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: 900;
+            font-size: 1.5em;
+        }
+
+        /* FAQ */
+        .faq-item {
+            background: #f8f9ff;
+            padding: 30px;
+            margin-bottom: 20px;
+            border-radius: 20px;
+            border-left: 6px solid #667eea;
+        }
+
+        .faq-question {
+            font-size: 1.3em;
+            font-weight: 900;
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+
+        .faq-answer {
+            font-size: 1.05em;
+            color: #333;
+            line-height: 1.8;
+        }
+
+        /* CTA セクション */
+        .cta-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 40px;
+            text-align: center;
+            border-radius: 30px;
+            margin-top: 60px;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5em;
+            font-weight: 900;
+            margin-bottom: 30px;
+        }
+
+        .cta-section p {
+            font-size: 1.3em;
+            margin-bottom: 40px;
+            opacity: 0.95;
+        }
+
+        /* レスポンシブ */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2em;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1em;
+            }
+
+            .section-title {
+                font-size: 1.8em;
+            }
+
+            .failure-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .step-card {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            section {
+                padding: 40px 25px;
+            }
+
+            .subsidy-box,
+            .highlight-box {
+                padding: 30px 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">🎯 DX推進チームの立ち上げから支援</div>
+            <h1>
+                社内DX人材育成<br>
+                サービス
+            </h1>
+            <p class="hero-subtitle">
+                御社のDX推進チームをゼロから立ち上げ、育成します。<br>
+                <strong>AIを武器にしたDX推進部門</strong>の構築から、<br>
+                自走できる組織体制まで伴走サポート。
+            </p>
+        </div>
+    </div>
+
+    <main>
+        <div class="container">
+            <div class="subsidy-box">
+                <h3>🎉 厚生労働省の助成金対象サービスです！</h3>
+                <p>本サービスは、厚生労働省の<strong>人材開発支援助成金（事業展開等リスキリング支援コース）</strong>の対象となります。新規事業の立ち上げなどの事業展開等に伴い、新たな分野で必要となる知識及び技能を習得させるための訓練として、訓練経費や訓練期間中の賃金の一部が助成されます。
+                </p>
+                <p style="margin-top: 15px;">詳しくは<a
+                        href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/koyou/kyufukin/d01-1.html#1005"
+                        target="_blank">厚生労働省のウェブサイト</a>をご確認いただくか、管轄の労働局にお問い合わせください。
+                </p>
+            </div>
+
+            <section>
+                <div class="section-header">
+                    <div class="section-badge">❌ PROBLEM</div>
+                    <h2 class="section-title">DXが進まない、本当の理由</h2>
+                    <p class="section-subtitle">こんなお悩み、ありませんか?</p>
+                </div>
+
+                <div class="failure-grid">
+                    <div class="failure-item">
+                        経営者だけが<br>「DXやろう」と<br>言っている
+                    </div>
+                    <div class="failure-item">
+                        総務や情シスに<br>丸投げされている
+                    </div>
+                    <div class="failure-item">
+                        誰も責任を持って<br>推進していない
+                    </div>
+                    <div class="failure-item">
+                        現場は「いつもの仕事」<br>で手一杯
+                    </div>
+                </div>
+
+                <div class="highlight-box">
+                    <h4>DXが進まないのは、「推進する組織」がないから</h4>
+                    <p>ツールを導入しても使い方を教えられない、AI活用を検討したいが調べる時間がない、部門間の調整ができず全社展開が進まない、経営層への報告ができず予算がつかない。こうした状況は、DX推進を専門に担当する組織がないことが原因です。
+                    </p>
+                </div>
+            </section>
+
+            <section>
+                <div class="section-header">
+                    <div class="section-badge">🎯 SOLUTION</div>
+                    <h2 class="section-title">なぜDX推進チーム/部門が<br>必要なのか</h2>
+                </div>
+
+                <ul class="checklist">
+                    <li>全社のDX戦略を立案し、場当たり的ではなく計画的に推進</li>
+                    <li>各部門の橋渡しとして、現場の課題を吸い上げ解決策を提案</li>
+                    <li>AIを含む最新技術の評価と導入判断</li>
+                    <li>新しいツールを現場に浸透させるための社内教育の実施</li>
+                    <li>成果を可視化し、経営層へ報告して継続投資を獲得</li>
+                </ul>
+
+                <div class="highlight-box">
+                    <h4>成功企業の共通点</h4>
+                    <p>DXが成功している企業は、必ず「推進する組織」があります。専任でも兼任でも構いません。重要なのは、DX推進という役割を持ったチーム・部門が存在することです。</p>
+                </div>
+            </section>
+
+            <section>
+                <div class="section-header">
+                    <div class="section-badge">💪 OUR SERVICE</div>
+                    <h2 class="section-title">私たちが、御社のDX推進チームを<br>サポートします</h2>
+                    <p class="section-subtitle">立ち上げから自走まで、あらゆる場面で伴走します</p>
+                </div>
+
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🚀</div>
+                        <h3>立ち上げ設計</h3>
+                        <p>DX推進チーム/部門の体制設計から役割定義まで、ゼロから構築します</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📚</div>
+                        <h3>スキル移転</h3>
+                        <p>推進担当者へのスキル移転・育成を実施。自信を持って推進できる人材を育てます</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🤖</div>
+                        <h3>AI戦略</h3>
+                        <p>AIを活用したDX戦略を策定。最新技術で業務を革新します</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔄</div>
+                        <h3>全社展開</h3>
+                        <p>各部門への展開をサポート。現場に根付く仕組みを作ります</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📊</div>
+                        <h3>報告支援</h3>
+                        <p>経営層への報告資料作成を支援。成果を可視化して投資を獲得</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">💬</div>
+                        <h3>壁打ち相談</h3>
+                        <p>いつでも相談できる壁打ち相手として、あなたのチームを支えます</p>
+                    </div>
+                </div>
+
+                <div class="highlight-box" style="margin-top: 50px;">
+                    <h4>6ヶ月後の目標</h4>
+                    <p>私たちがいなくても、DX推進チームが自走できる状態を目指します。</p>
+                </div>
+            </section>
+
+            <section>
+                <div class="section-header">
+                    <div class="section-badge">📋 PROCESS</div>
+                    <h2 class="section-title">DX推進チームの<br>立ち上げから支援</h2>
+                </div>
+
+                <div class="steps-container">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>体制設計 - DX推進チームの立ち上げ</h3>
+                            <ul>
+                                <li>専任 or 兼任の判断（兼任でもOK）</li>
+                                <li>誰をメンバーにするか</li>
+                                <li>経営層の関与度の設計</li>
+                                <li>各部門との連携体制</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>役割・ミッション定義 - 何をする組織なのか明確にする</h3>
+                            <ul>
+                                <li>DX推進チームの目的・ゴール設定</li>
+                                <li>権限と責任の範囲</li>
+                                <li>KPI・評価指標の設定</li>
+                                <li>予算の確保方法</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>初期施策の実行 - 小さな成功で信頼を獲得</h3>
+                            <ul>
+                                <li>クイックウィン案件の選定</li>
+                                <li>AIを活用した業務効率化</li>
+                                <li>成果の可視化・報告</li>
+                                <li>社内への認知拡大</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h3>組織の定着 - 継続的に機能する体制へ</h3>
+                            <ul>
+                                <li>推進プロセスの標準化</li>
+                                <li>ナレッジの蓄積</li>
+                                <li>後任への引き継ぎ体制</li>
+                                <li>完全自走化</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="highlight-box" style="margin-top: 50px;">
+                    <h4>既にメンバーがいる場合も対応</h4>
+                    <p>既にDX推進を担当している方がいる場合は、その方を中心にチームを強化します。「何をすればいいか分からない」状態から、自信を持って推進できるチームへ導きます。専任・兼任は問いません。</p>
+                </div>
+            </section>
+
+            <section>
+                <div class="section-header">
+                    <div class="section-badge">🤖 AI POWERED</div>
+                    <h2 class="section-title">AI活用が鍵となる理由</h2>
+                    <p class="section-subtitle">これからのDXはAIを活用した業務改革が中心です</p>
+                </div>
+
+                <ul class="checklist">
+                    <li>議事録の自動作成で会議後の事務作業を削減</li>
+                    <li>過去の資料をAIが検索し、提案書作成を支援</li>
+                    <li>マニュアルをAI化し、誰でも即座に回答を得られる</li>
+                    <li>データ分析をAIが代行し、意思決定を高速化</li>
+                    <li>プログラミング不要で業務アプリを作成</li>
+                </ul>
+
+                <div class="highlight-box">
+                    <h4>AI活用による内製化の民主化</h4>
+                    <p>ChatGPTやClaude等の生成AIを活用することで、コードの自動生成やデバッグ支援が可能になり、プログラミング経験が浅い方でも業務アプリの開発ができるようになりました。現場の業務を最も理解している担当者自身が、自分たちに最適なツールを作れる時代が到来しています。
+                    </p>
+                </div>
+            </section>
+
+            <section>
+                <div class="section-header">
+                    <div class="section-badge">🏢 INDUSTRIES</div>
+                    <h2 class="section-title">業種別のDX推進例</h2>
+                    <p class="section-subtitle">御社の業種に合わせたDX推進を支援します</p>
+                </div>
+
+                <div class="industry-grid">
+                    <div class="industry-card">
+                        <div class="industry-title">🏭 製造業</div>
+                        <div class="industry-section">
+                            <div class="industry-section-title">DX推進の課題:</div>
+                            <ul>
+                                <li>図面・仕様書の管理が属人化</li>
+                                <li>生産計画の調整に時間がかかる</li>
+                                <li>品質データが活用できていない</li>
+                            </ul>
+                        </div>
+                        <div class="industry-section">
+                            <div class="industry-section-title">AI×DXで解決:</div>
+                            <ul>
+                                <li>マニュアルのAI検索化</li>
+                                <li>在庫予測の精度向上</li>
+                                <li>品質レポートの自動生成</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="industry-card">
+                        <div class="industry-title">🛒 卸売・小売業</div>
+                        <div class="industry-section">
+                            <div class="industry-section-title">DX推進の課題:</div>
+                            <ul>
+                                <li>発注業務が手作業</li>
+                                <li>在庫管理がExcel地獄</li>
+                                <li>顧客対応の記録が散在</li>
+                            </ul>
+                        </div>
+                        <div class="industry-section">
+                            <div class="industry-section-title">AI×DXで解決:</div>
+                            <ul>
+                                <li>発注データの自動入力</li>
+                                <li>需要予測による在庫最適化</li>
+                                <li>顧客対応履歴のAI検索</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="industry-card">
+                        <div class="industry-title">💼 サービス業</div>
+                        <div class="industry-section">
+                            <div class="industry-section-title">DX推進の課題:</div>
+                            <ul>
+                                <li>提案資料作成に時間がかかる</li>
+                                <li>顧客情報が分散している</li>
+                                <li>ナレッジが共有されない</li>
+                            </ul>
+                        </div>
+                        <div class="industry-section">
+                            <div class="industry-section-title">AI×DXで解決:</div>
+                            <ul>
+                                <li>提案資料のAI生成</li>
+                                <li>顧客情報の一元管理</li>
+                                <li>社内FAQのAI化</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="industry-card">
+                        <div class="industry-title">🏗️ 建設・不動産</div>
+                        <div class="industry-section">
+                            <div class="industry-section-title">DX推進の課題:</div>
+                            <ul>
+                                <li>現場と本社の情報共有が遅い</li>
+                                <li>契約書・図面の管理が煩雑</li>
+                                <li>進捗管理が属人的</li>
+                            </ul>
+                        </div>
+                        <div class="industry-section">
+                            <div class="industry-section-title">AI×DXで解決:</div>
+                            <ul>
+                                <li>現場報告のデジタル化</li>
+                                <li>契約書・図面のクラウド管理とAI検索</li>
+                                <li>進捗の可視化と自動アラート</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <div class="section-header">
+                    <div class="section-badge">⏱️ TIMELINE</div>
+                    <h2 class="section-title">サービス提供の流れ</h2>
+                </div>
+
+                <div class="steps-container">
+                    <div class="step-card">
+                        <div class="step-number">1ヶ月</div>
+                        <div class="step-content">
+                            <h3>立ち上げフェーズ</h3>
+                            <ul>
+                                <li>DX推進チームの体制設計</li>
+                                <li>役割・ミッション・KPIの策定</li>
+                                <li>初期メンバーの選定・研修</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-number">2-3ヶ月</div>
+                        <div class="step-content">
+                            <h3>実行フェーズ</h3>
+                            <ul>
+                                <li>クイックウィン案件の実行</li>
+                                <li>AI活用事例の創出</li>
+                                <li>成果の可視化・報告</li>
+                                <li>全社展開の準備</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-number">3-6ヶ月</div>
+                        <div class="step-content">
+                            <h3>自走化フェーズ</h3>
+                            <ul>
+                                <li>推進プロセスの標準化</li>
+                                <li>チームの完全自走化</li>
+                                <li>継続的改善の仕組み構築</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <div class="section-header">
+                    <div class="section-badge">❓ FAQ</div>
+                    <h2 class="section-title">よくある質問</h2>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Q. 専任のDX担当者がいないのですが大丈夫ですか？</div>
+                    <div class="faq-answer">A. 問題ありません。兼任でもスタート可能です。まずは1-2名の兼任メンバーから始めて、成果が出てから専任化するケースが多いです。</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Q. IT知識がほとんどないのですが対応できますか？</div>
+                    <div class="faq-answer">A.
+                        対応できます。AIを活用することで、プログラミング知識がなくても業務改善や簡単なアプリ開発が可能です。必要なスキルは実践の中で習得していただきます。
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Q. どのくらいの期間で成果が出ますか？</div>
+                    <div class="faq-answer">A. 小さな成果（クイックウィン）は1-2ヶ月で出すことを目指します。組織としての自走化は6ヶ月程度を想定しています。</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Q. 支援終了後も相談できますか？</div>
+                    <div class="faq-answer">A. はい、可能です。自走化後もスポットでのご相談や、継続的なアドバイザリー契約も承っております。</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Q. 費用はどのくらいかかりますか？</div>
+                    <div class="faq-answer">A.
+                        企業規模や支援内容により異なります。初回ヒアリング（無料）で詳しくご案内いたしますので、まずはお気軽にお問い合わせください。
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+
+</body>
+
+</html>
